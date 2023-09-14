@@ -1,0 +1,1167 @@
+@import 'base.scss';
+@import 'colors.scss';
+@import 'queries.scss';
+
+//================== Page - 1 ====================//
+
+header{
+    .nav{
+        padding: 10px 0;
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include mobile{
+                gap: 5%;
+            }
+        }
+        &__logo{
+            display: flex;
+            gap: 15px;
+                align-items: center;
+        }
+        &__info{
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        &__address{
+            display: flex;
+            gap: 10px;
+            i{
+                font-size: 20px;
+                color: $blue;
+            }
+        }
+        &__txt{
+            line-height: 20px;
+            p{
+                color: $grey;
+            }
+            a{
+                color: $grey;
+                text-decoration: underline;
+            }
+            a:hover{
+                color: $blue;
+            }
+        }
+        &__hidden{
+            display: none;
+            i{
+                font-size: 2rem;
+                color: $blue;
+            }
+            label{
+                font-size: 2rem;
+                color: $blue;
+
+            }
+        }
+        @include mobile{
+            padding: 20px 0;
+            &__info{
+                display: none;
+            }
+            &__hidden{
+                display: flex;
+                gap: 10%;
+            }
+            &__logo{
+                img{
+                    width: 20%;
+                }
+            }
+            h3{
+                font-size: 14px;
+            }
+            p{
+                font-size: 12px;
+                line-height: 16px;
+            }
+            &__hidden{
+                i{
+                    font-size: 1.5rem;
+                }
+                label{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .menu{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        padding: 20px;
+        display: none;
+        background-color: white;
+        height: 100vh;
+        transition: .5s;
+        label{
+            padding: 15px;
+            font-size: 2rem;
+            color: $blue;
+        }
+        .loc{
+            padding: 15px;
+            p{
+                padding: 10px 0;
+            }
+            h3{
+                padding: 10px 0;
+            }
+            i{
+                color: $blue;
+            }
+        }
+        .link{
+            padding: 15px;
+            transition: .3s;
+        }
+        .link:hover{
+            background-color: $lgrey;
+            transform: scale(1.1);
+        }
+        @include mobile{
+            display: block;
+        }
+    }
+    #close{
+        display: none;
+    }
+    #close:checked ~ .menu{
+        transform: translate(-100%);
+    }
+    #menu{
+        display: none;
+    }
+    #menu:checked ~ .menu{
+        left: 0;
+    }
+    .header{
+        background-color: $lgrey;
+        .container{
+            display: flex;
+            .page{
+                transition: .5s;
+                padding: 15px;
+                a{
+                    font-size: 14px;
+                    transition: .3s;
+                }
+                i{
+                    color: $blue;
+                }
+                #down{
+                    display: none;
+                }
+            }
+            .page:hover{
+                background-color: $blue;
+                a{
+                    color: white;
+                }
+                i{
+                    color: white;
+                }
+            }
+        }
+        @include mobile{
+            display: none;
+        }
+    }
+    .shc{
+        padding: 60px 0 30px 0;
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__img{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        &__txt{
+            p{
+                padding: 20px 0 50px 0;
+            }
+        }
+        @include mobile{
+            background-color: $lgrey;
+            p{
+                padding: 20px 0;
+            }
+            button{
+                margin: 0 0 20px 0;
+                width: 100%;
+                // display: none;
+            }
+        }
+    }
+    .credit{
+        padding: 80px 0;
+        &__txt{
+            width: 60%;
+            p{
+                line-height: 20px;
+                padding: 20px 0;
+            }
+        }
+        &__cards{
+            display: flex;
+            gap: 20px;
+        }
+        &__card{
+            width: 35%;
+            padding: 50px 20px;
+            text-align: center;
+            border: 1px solid $lgrey;
+            border-radius: 5px;
+            transition: .3s;
+            p{
+                line-height: 20px;
+                padding: 10px 0;
+            }
+        }
+        &__card:hover{
+            background-color: $blue;
+            color: white;
+            transform: scale(1.05);
+        }
+        @include mobile{
+            &__txt{
+                width: 100%;
+            }
+            &__cards{
+                flex-wrap: wrap;
+            }
+            &__card{
+                width: 100%;
+            }
+        }
+    }
+    .banner{
+        &__main{
+            padding: 30px 0;
+            color: $grey;
+            a{
+                text-decoration: underline;
+            }
+        }
+        &__img{
+            background-image: linear-gradient(to top, rgba(36, 35, 33, 0.53), rgba(36, 35, 33, 0.53)), url(../images/banner.svg);
+            background-size: cover;
+            background-position: center;
+            padding: 20px 0;
+            display: flex;
+            gap: 10%;
+            justify-content: space-between;
+            color: white;
+            padding: 50px;
+        }
+        &__p{
+            padding: 20px;
+            background-color: $blue;
+        }
+        .banner-1{
+            position: relative;
+            background: $blue;
+            button{
+                background-color: rgba(252, 236, 79, 1);
+                color: black;
+                z-index: 1;
+            }
+            .hands{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        @include mobile{
+            &__img{
+                flex-wrap: wrap;
+            }
+            &__p{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.sec-1{
+    padding: 80px 0;
+    background-color: $lgrey;
+    h2{
+        padding-bottom: 40px;
+        color: $black;
+    }
+    &__check{
+        display: flex;
+        gap: 20%;
+    }
+    &__tick{
+        width: 30%;
+    }
+    &__p{
+        display: flex;
+        gap: 20px;
+        padding: 10px 0;
+        i{
+            color: $blue;
+        }
+    }
+    @include mobile{
+        &__check{
+            flex-wrap: wrap;
+        }
+        &__tick{
+            width: 100%;
+        }
+    }
+}
+
+.sec-2{
+    padding: 50px 0;
+    &__p{
+        padding: 20px 0;
+        p{
+            line-height: 20px;
+        }
+    }
+    &__box{
+        margin: 50px 0;
+        display: flex;
+        gap: 20%;
+        padding: 15px 30px;
+        border: 1px solid $blue;
+        border-radius: 5px;
+        background-color: $lgrey;
+    }
+    &__tick{
+        display: flex;
+        gap: 15px;
+        font-weight: bold;
+        i{
+            color: $blue;
+        }
+    }
+    &__cl{
+        color: $blue;
+    }
+    &__h2{
+        color: $blue;
+        font-size: 28px;
+    }
+
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__card{
+        width: 28%;
+        display: flex;
+        gap: 20px;
+        padding: 30px 0;
+        h3{
+            padding-bottom: 10px;
+        }
+    }
+    @include mobile{
+        &__box{
+            flex-wrap: wrap;
+        }
+        &__cards{
+            flex-wrap: wrap;
+        }
+        &__card{
+            width: 100%;
+        }
+    }
+}
+
+.sec-3{
+    padding: 60px 0;
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+    }
+    &__card{
+        position: relative;
+        padding: 45px 0;
+        width: 30%;
+        background-color: $black;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        h3{
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+    &__icon{
+        position: absolute;
+        left: -10%;
+        top: -30%;
+        width: 45%;
+        img{
+            width: 100%;
+        }
+    }
+
+    &__catalog{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__boxs{
+        padding: 50px 0;
+        display: flex;
+        justify-content: space-between;
+        .notactive:hover{
+            background-color: white;
+        } 
+    }
+    &__box{
+        position: relative;
+        border: 1px solid #E5E5E5;
+        width: 32%;
+        transition: .5s;
+        img{
+            width: 100%;
+        }
+        .nonactive{
+            background-color: $lgrey;
+            color: $black;
+        }
+    }
+    &__box:hover{
+        background-color: $lgrey;
+        transform: scale(1.05);
+        &__btn:hover{
+            background-color: transparent;
+            border: 1px solid $blue;
+            color: $blue;
+        }
+    }
+    &__btn:hover{
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+    &__txt{
+        padding: 20px;
+        .cl{
+            color: $blue;
+        }
+        p{
+            font-size: 14px;
+            line-height: 30px;
+        }
+    }
+    &__sells{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+    &__cash{
+        font-weight: bold;
+    }
+    &__btn{
+        padding: 15px 30px;
+        width: 100%;
+        text-align: center;
+        background-color: $blue;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        border: 1px solid $blue;
+    }
+    &__absolute{
+        position: absolute;
+        left: 0;
+        top: 0;
+        .yellow{
+            margin: 10px;
+            padding: 10px;
+            background-color: $yellow;
+            border-radius: 5px;
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+    &__soon{
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: $blue;
+        color: white;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    &__sales{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 30px 15px;
+        border: 1px solid $blue;
+        background-color: $lgrey;
+        border-radius: 5px;
+        margin: 30px 0;
+        padding: 30px;
+        .sale-width{
+            width: 100%;
+        }
+    }
+    &__sale{
+        width: 45%;
+        margin: 20px 0;
+        display: flex;
+        gap: 15px;
+        i{
+            color: $blue;
+        }
+        .blue{
+            color: $blue;
+        }
+    }
+    &__text{
+        margin: 80px 0;
+        display: flex;
+        gap: 10%;
+        p{
+            padding: 10px 0;
+        }
+        .blue{
+            color: $blue;
+        }
+    }
+    &__phone{
+        width: 80%;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+        p{
+            padding: 10px 0;
+        }
+        h3{
+            padding: 20px 0;
+        }
+    }
+    @include mobile{
+        &__cards{
+            flex-wrap: wrap;
+        }
+        &__card{
+            width: 100%;
+            margin: 20px 0;
+        }
+        &__catalog{
+            button{
+                display: none;
+            }
+        }
+        &__boxs{
+            .hidden{
+                display: none;
+            }
+        }
+        &__box{
+            width: 100%;
+        }
+        &__sales{
+            flex-wrap: wrap;
+        }
+        &__sale{
+            width: 100%;    
+        }
+        &__text{
+            flex-wrap: wrap;
+            video{
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+        &__text-1{
+            button{
+                width: 100%;
+            }
+        }
+        &__phone{
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.sec-4{
+    background-color: $lgrey;
+    padding: 60px 0;
+    h2{
+        padding-bottom: 10px;
+    }
+    .p{
+        padding: 15px 0;
+    }
+    .h2{
+        font-size: 26px;
+        color: $blue;
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+    &__card{
+        position: relative;
+        width: 22%;
+        h3{
+            padding-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .lg{
+            color: rgb(128, 128, 128, 0.2);
+        }
+        p{
+            padding-top: 30px;
+            line-height: 32px;
+            font-size: 14px;
+        }
+        span{
+            font-weight: bold;
+        }
+        button{
+            margin-top: 30px;
+        }
+    }
+    &__box{
+        // width: 30px;
+        // height: 30px;
+        padding: 25px;
+        background-color: $lblue;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        top: -5%;
+    }
+    @include mobile{
+        &__cards{
+            flex-wrap: wrap;
+        }
+        &__card{
+            width: 100%;
+            margin: 30px;
+        }
+    }
+}
+
+.sec-5{
+    padding: 50px 0;
+    background-color: $lgrey;
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__txt{
+        width: 35%;
+        p{
+            padding: 30px 0;
+            line-height: 34px;
+        }
+        h2{
+            color: $blue;
+            font-weight: bold;
+        }
+    }
+    &__submit{
+        width: 50%;
+        input{
+            width: 80%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(229, 229, 229, 1);
+            border-radius: 5px;
+        }
+    }
+    &__check{
+        display: flex;
+        gap: 50px;
+        padding: 20px 0;
+        .tick{
+            display: flex;
+            gap: 15px;
+        }
+    }
+    @include mobile{
+        background-color: white;
+        .container{
+            flex-wrap: wrap;
+        }
+        &__txt{
+            width: 100%;
+        }
+        &__submit{
+            margin: 30px 0;
+            width: 100%;
+            background-color: $lgrey;
+            text-align: center;
+            border-radius: 10px;
+            input{
+                width: 90%;
+            }
+        }
+        &__check{
+            flex-wrap: wrap;
+            button{
+                margin: 0 auto;
+                width: 90%;
+            }
+            br{
+                display: none;
+            }
+            i{
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+.footer{
+    padding: 80px 0 50px 0;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .sec{
+            .link{
+                margin: 10px 0;
+            }
+            p{
+                margin: 10px 0;
+                line-height: 20px;
+            }
+            h3{
+                padding-top: 15px;
+                font-size: 20px;
+            }
+        }
+        .black{
+            font-weight: bold;
+        }
+        .section{
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .socials{
+                display: flex;
+                gap: 15px;
+                .social{
+                    padding: 10px 15px;
+                    background: $lgrey;
+                    border-radius: 5px;
+                    transition: .5s;
+                    i{
+                        font-size: 20px;
+                    }
+                }
+                .social:hover{
+                    transform: scale(1.2);
+                    background-color: $blue;
+                    color: white;
+                }
+            }
+            .links{
+                a{
+                    text-decoration: underline;
+                    margin-left: 50px;
+                    transition: .2s;
+                }
+                a:hover{
+                    color: $blue;
+                }
+            }
+        }
+    }
+    @include mobile{
+        padding: 0 0 50px 0;
+        .container{
+            flex-wrap: wrap;
+            text-align: center;
+            .sec{
+                width: 100%;
+            }
+            .section{
+                flex-wrap: wrap;
+                justify-content: center;
+                .links{
+                    padding-top: 20px;
+                    a{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-2{
+    padding: 20px 0;
+    background-color: $black;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        color: $yellow;
+        p{
+            font-size: 14px;
+        }
+    }
+    @include mobile{
+        .container{
+            flex-wrap: wrap;
+            justify-content: center ;
+        }
+    }
+}
+
+//================== Page - 2 ====================//
+.sec-2-2{
+    position: relative;
+    background-color: $lgrey;
+    padding: 80px 0;
+    &__txt{
+        width: 70%;
+        .p{
+            padding: 30px 0;
+        }
+        .p1{
+            color: $grey;
+            padding: 10px 0 30px 0;
+            font-size: 14px;
+        }
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__card{
+        padding: 50px 30px;
+        border: 1px solid $blue;
+        background-color: white;
+        text-align: center;
+        p{
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    }
+    &__absolute{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    @include mobile{
+        &__txt{
+            width: 100%;
+        }
+        &__cards{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__card{
+            padding: 30px 10px;
+        }
+    }
+}
+
+.sec-2-5{
+    padding: 70px 0;
+    .blue{
+        color: $blue;
+        font-weight: bold;
+    }
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__card{
+        margin: 20px 0;
+        width: 25%;
+    }
+    &__line{
+        margin: 20px 0;
+        color: $blue;
+    }
+    &__terms{
+        padding: 50px 0;
+        background-color: $lgrey;
+        border: 1px solid $blue;
+        border-radius: 5px;
+        padding: 30px;
+    }
+    &__txt{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0 0 0;
+        .part{
+            display: flex;
+            gap: 10px;
+        }
+        .p{
+            width: 80%;
+        }
+    }
+    &__term{
+        margin: 70px 0;
+        width: 75%;
+        h3{
+            margin: 30px 0;
+        }
+        p{
+            margin: 20px 0;
+        }
+        i{
+            color: $blue;
+        }
+    }
+    table{
+        .bloo{
+            background-color: $blue;
+            color: white;
+        }
+        .table-width{
+            width: 30%;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .grey{
+            background-color: $lgrey;
+        }
+        td{
+            padding: 20px;
+            font-size: 14px;
+            line-height: 22px;  
+        }
+    }
+    @include mobile{
+        padding: 70px 0 0 0;
+        .hide{
+            display: none;
+        }
+        &__cards{
+            flex-wrap: wrap;
+        }
+        &__card{
+            width: 100%;
+        }
+        &__txt{
+            flex-wrap: wrap;
+            .p{
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+        &__term{
+            width: 100%;
+        }
+        table{
+            td{
+                font-size: 10px;
+                line-height: 15px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+.sec-2-4{
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        padding: 70px 0;
+    }
+    &__card{
+        img{
+            width: 80%;
+        }
+        h3{
+            padding: 20px 0 0 0;
+        }
+    }
+}
+
+.data{
+    padding: 70px 0;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        h2{
+            padding-bottom: 20px;
+        }
+        p{
+            padding: 5px 0;
+            font-weight: bold;
+        }
+    }
+    &__info{
+        padding: 30px 0;
+    }
+    &__inf{
+        display: flex;
+        padding-top: 20px;
+        p{
+            margin: 10px 0;
+        }
+        .h2{
+            margin-top: 100px;
+        }
+    }
+    &__mark{
+        width: 70%;
+        padding: 0 20px 0 0;
+        display: flex;
+        justify-content: space-between;
+        border-right: 1px solid $lgrey;
+    }
+    &__deposit{
+        padding: 10px 20px;
+        background-color: $lgrey;
+        border: 1px solid $blue;
+        border-radius: 5px;
+    }
+    &__payment{
+        padding: 0 0 0 20px;
+        .code{
+            padding: 20px;
+            background-color: $lgrey;
+            border-radius: 5px;
+        }
+    }
+    &__pay{
+        .cards{
+            margin: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            .card{
+                .blue{
+                    color: $blue;
+                }
+                .card-fl{
+                    display: flex;
+                    margin: 20px 0;
+                    justify-content: space-between;
+                    gap: 30px;
+                    .num{
+                        width: 40%;
+                        padding: 15px;
+                        background-color: $lgrey;
+                        border: 1px solid $blue;
+                        border-radius: 5px;
+                    }
+                }
+                p{
+                    font-weight: bold;
+                }
+            }
+            .card-line{
+                background-color: $lgrey;
+                width: 2px; 
+            }
+        }
+    }
+    h2{
+        margin-bottom: 20px;
+    }
+    table{
+        td{
+            padding: 15px;
+            font-size: 14px;
+        }
+        .bloo{
+            background-color: $blue;
+            color: white;
+        }
+        .tw{
+            width: 20%;
+        }
+        .grey{
+            background-color: $lgrey;
+        }
+    }
+    @include mobile{
+        &__top{
+            width: 100%;
+            flex-wrap: wrap;
+            .btn{
+                button{
+                    width: 100%;
+                }
+            }
+        }
+        &__inf{
+            flex-wrap: wrap;
+            .h2{
+                margin-top: 20px;
+            }
+        }
+        &__mark{
+            width: 100%;
+            flex-wrap: wrap;
+            border: none;
+        }
+        &__payment{
+            margin: 30px auto;
+        }
+        &__pay{
+            .cards{
+                flex-wrap: wrap;
+            }
+        }
+        table{
+            display: none;
+        }
+        .hide{
+            display: none;
+        }
+    }
+}
+
+//================== Page - 4 ====================//
+.login{
+    width: 25%;
+    margin: 70px auto;
+    text-align: center;
+    p{
+        margin: 20px 0;
+    }
+    input{
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid rgba(229, 229, 229, 1);
+    }
+    button{
+        width: 100%;
+        margin: 10px 0;
+    }
+    @include mobile{
+        width: 90%;
+        background-color: $lgrey;
+        border-radius: 10px;
+        padding: 20px;
+    }
+}
